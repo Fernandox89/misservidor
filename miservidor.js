@@ -235,11 +235,8 @@ const servidor = http.createServer((req, res) => {
         mostrarEquipo(req, res);
     } else if (url === '/opinion') {
         mostrarOpinion(req, res);
-    } else {
-        manejarRuta404(req, res);
-    }
-
-    else if (url === '/api/prestamos') {
+    } 
+        else if (url === '/api/prestamos') {
       getPrestamos(req, res);
   } else if (url === '/prestamo') {
       solicitarPrestamo(req, res);
@@ -255,7 +252,11 @@ const servidor = http.createServer((req, res) => {
       getPagos(req, res);
   } else if (url === '/pagos') {
       mostrarPagos(req, res);
-  }
+  }else { 
+        manejarRuta404(req, res);
+    }
+
+
 });
 
 const puerto = 1984;
